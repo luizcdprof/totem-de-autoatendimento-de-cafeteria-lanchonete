@@ -21,7 +21,23 @@ while True:
 
     if(opcao == '1'):
         os.system('cls')
-        print('Produtos')
+        print('1. Novo Produto')
+        print('2. Ver Produtos')
+        print('3. Voltar')
+        opcao = input('Escolha uma opção: ')
+        if(opcao == '1'):
+            os.system('cls')
+            print('NOVO PRODUTO')
+            pnome = input('Digite o nome do produto: ')
+            ppreco = input('Digite o preço do produto: ')
+            pqtd = input('Digite a quantidade do produto: ')
+            # Adicionar o produto à matriz
+        elif(opcao == '2'):
+            print('VER PRODUTOS')
+        elif(opcao == '3'):
+            print('VOLTAR')
+        else:
+            print('Opção inválida...')
     elif(opcao == '2'):
         os.system('cls')
         print('Carrinho')
