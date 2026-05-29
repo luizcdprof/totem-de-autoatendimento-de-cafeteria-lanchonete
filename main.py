@@ -1,5 +1,15 @@
 import os
 
+# Declaração das Variáveis Globais
+opcao = 0
+usuarios = []
+produtos = []
+pedidos = []
+
+# Função para limpar a tela
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 while True:
     print('Totem de Autoatendimento de Cafeteria/Lanchonete')
     print('''
@@ -12,21 +22,21 @@ while True:
         █████    ████ █████░░██████        █████   ░░██████   ░░█████ ░░██████  █████░███ █████
         ░░░░░    ░░░░ ░░░░░  ░░░░░░        ░░░░░     ░░░░░░     ░░░░░   ░░░░░░  ░░░░░ ░░░ ░░░░░ 
     ''')
-    print('1. Produtos')
-    print('2. Carrinho')
-    print('3. ')
+    print('1. Usuário')
+    print('2. Produto')
+    print('3. Pedido')
     print('4. Sair')
 
     opcao = input('Escolha a opção desejada: ')
 
     if(opcao == '1'):
-        os.system('cls')
+        clear_screen()
         print('1. Novo Produto')
         print('2. Ver Produtos')
         print('3. Voltar')
         opcao = input('Escolha uma opção: ')
         if(opcao == '1'):
-            os.system('cls')
+            clear_screen()
             print('NOVO PRODUTO')
             pnome = input('Digite o nome do produto: ')
             ppreco = input('Digite o preço do produto: ')
@@ -39,15 +49,15 @@ while True:
         else:
             print('Opção inválida...')
     elif(opcao == '2'):
-        os.system('cls')
+        clear_screen()
         print('Carrinho')
     elif(opcao == '3'):
-        os.system('cls')
+        clear_screen()
         print('Em desenvolvimento...')
     elif(opcao == '4'):
         break
     else:
         print('Opção inválida! Digite uma opção do menu...')
 
-os.system('cls')
+clear_screen()
 print('O programa foi encerrado.')
