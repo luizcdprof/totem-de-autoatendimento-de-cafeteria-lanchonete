@@ -10,40 +10,57 @@ pedidos = []
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
-while True:
-    print('Totem de Autoatendimento de Cafeteria/Lanchonete')
+# Função para exibir o Logotipo
+def show_title():
     print('''
-    ███████████ █████                  ███████████           █████                            
-    ░█░░░███░░░█░░███                  ░█░░░███░░░█          ░░███                             
-    ░   ░███  ░  ░███████    ██████    ░   ░███  ░   ██████  ███████    ██████  █████████████  
-        ░███     ░███░░███  ███░░███       ░███     ███░░███░░░███░    ███░░███░░███░░███░░███ 
-        ░███     ░███ ░███ ░███████        ░███    ░███ ░███  ░███    ░███████  ░███ ░███ ░███ 
-        ░███     ░███ ░███ ░███░░░         ░███    ░███ ░███  ░███ ███░███░░░   ░███ ░███ ░███ 
-        █████    ████ █████░░██████        █████   ░░██████   ░░█████ ░░██████  █████░███ █████
-        ░░░░░    ░░░░ ░░░░░  ░░░░░░        ░░░░░     ░░░░░░     ░░░░░   ░░░░░░  ░░░░░ ░░░ ░░░░░ 
+        ███████████ █████                  ███████████           █████                            
+        ░█░░░███░░░█░░███                  ░█░░░███░░░█          ░░███                             
+        ░   ░███  ░  ░███████    ██████    ░   ░███  ░   ██████  ███████    ██████  █████████████  
+            ░███     ░███░░███  ███░░███       ░███     ███░░███░░░███░    ███░░███░░███░░███░░███ 
+            ░███     ░███ ░███ ░███████        ░███    ░███ ░███  ░███    ░███████  ░███ ░███ ░███ 
+            ░███     ░███ ░███ ░███░░░         ░███    ░███ ░███  ░███ ███░███░░░   ░███ ░███ ░███ 
+            █████    ████ █████░░██████        █████   ░░██████   ░░█████ ░░██████  █████░███ █████
+            ░░░░░    ░░░░ ░░░░░  ░░░░░░        ░░░░░     ░░░░░░     ░░░░░   ░░░░░░  ░░░░░ ░░░ ░░░░░ 
     ''')
-    print('1. Usuário')
-    print('2. Produto')
-    print('3. Pedido')
-    print('4. Sair')
+
+# Função para exibir os menus
+def show_menu(menu):
+    global opcao
+    clear_screen()
+
+    if(menu == 'principal'):
+        print('1. Usuário')
+        print('2. Produto')
+        print('3. Pedido')
+        print('0. Sair')
+    elif(menu == 'usuario'):
+        print('### Usuário ###')
+        print('1. Novo Usuário')
+        print('2. Ver Usuários')
+        print('0. Voltar')
+    else:
+        pass
 
     opcao = input('Escolha a opção desejada: ')
 
-    if(opcao == '1'):
-        clear_screen()
-        print('1. Novo Produto')
-        print('2. Ver Produtos')
-        print('3. Voltar')
-        opcao = input('Escolha uma opção: ')
+while True:
+    show_title()
+    show_menu('principal')
+
+    if(opcao == '1'): # Opção "Usuário" do menu principal
+        show_menu('usuario')
         if(opcao == '1'):
             clear_screen()
-            print('NOVO PRODUTO')
-            pnome = input('Digite o nome do produto: ')
-            ppreco = input('Digite o preço do produto: ')
-            pqtd = input('Digite a quantidade do produto: ')
-            # Adicionar o produto à matriz
+            print('### NOVO USUÁRIO ###')
+            nome = input('Digite o nome do usuário: ')
+            email = input('Digite o e-mail do usuário: ')
+            # Adicionar o usuário à matriz
+            usuarios.append([nome, email])
         elif(opcao == '2'):
-            print('VER PRODUTOS')
+            print('### VER USUÁRIOS ###')
+            for usuario in usuarios:
+                print(f'{usuario[0]} - {usuario[1]}')
+            input('Pressione ENTER para continuar...')
         elif(opcao == '3'):
             print('VOLTAR')
         else:
