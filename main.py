@@ -137,7 +137,7 @@ while True:
         elif(opcao == '2'): # Opção "Listar Usuários" do menu "Produto"
             show_menu('listar_produtos', False)
             listar('produtos')
-            input('Pressione ENTER para continuar...')
+            pressione_enter()
         elif(opcao == '0'): # Opção "Voltar" do menu "Produto"
             print('VOLTAR')
         else:
@@ -150,7 +150,7 @@ while True:
         elif(opcao == '2'): # Opção "Listar Pedidos" do menu "Pedido"
             show_menu('listar_pedidos', False)
             listar('pedidos')
-            input('Pressione ENTER para continuar...')
+            pressione_enter()
         elif(opcao == '0'): # Opção "Voltar" do menu "Pedido"
             print('VOLTAR')
         else:
