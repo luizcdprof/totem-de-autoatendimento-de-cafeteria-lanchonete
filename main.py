@@ -101,7 +101,7 @@ def cadastrar(tipo):
 def listar(tipo):
     if(tipo == 'usuarios'):
         for usuario in usuarios:
-            print(f'username {usuario[0]} - {usuario[1]} - {usuario[2]}')
+            print(f'código {usuario[0]} - {usuario[1]} - {usuario[2]}')
     elif(tipo == 'produtos'):
         for produto in produtos:
             print(f'código {produto[0]} - {produto[1]} - {produto[2]}')
