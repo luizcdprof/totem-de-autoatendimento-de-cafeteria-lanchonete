@@ -1,5 +1,4 @@
 import os
-import uuid
 
 # Declaração das Variáveis Globais
 opcao = 0
