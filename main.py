@@ -10,6 +10,7 @@ pedidos = []
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+# Função para aguardar que o usuário pressione ENTER
 def pressione_enter():
     input('Pressione ENTER para continuar...')
 
@@ -76,6 +77,7 @@ def show_menu(menu, opcoes = True):
     if opcoes:
         opcao = input('Escolha a opção desejada: ')
 
+# Função para cadastrar conforme o tipo informado
 def cadastrar(tipo):
     if(tipo == 'usuarios'):
         codigo = len(usuarios) + 1
@@ -98,6 +100,7 @@ def cadastrar(tipo):
         # Adicionar o pedido à matriz
         pedidos.append([numero, usuario, produto, quantidade])
 
+# Função para listar conforme o tipo informado
 def listar(tipo):
     if(tipo == 'usuarios'):
         for usuario in usuarios:
@@ -112,6 +115,7 @@ def listar(tipo):
         print('Não há valores a exibir...')
         pressione_enter()
 
+# Rotina principal (programa executando em loop infinito)
 while True:
     show_menu('principal')
 
@@ -159,5 +163,6 @@ while True:
     else:
         print('Opção inválida! Digite uma opção do menu...')
 
+# Encerramento do programa após sair do loop inifinito
 clear_screen()
 print('O programa foi encerrado.')
