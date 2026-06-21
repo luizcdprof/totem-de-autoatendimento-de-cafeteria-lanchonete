@@ -165,4 +165,4 @@ while True:
 
 # Encerramento do programa após sair do loop inifinito
 clear_screen()
-print('O programa foi encerrado.')
+print('O programa foi encerrado...')
